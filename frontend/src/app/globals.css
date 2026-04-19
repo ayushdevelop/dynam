@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-color: #0f1115;
+  --text-main: #f8f9fa;
+  --text-muted: #8b949e;
+  --accent: #5e6ad2;
+  --accent-hover: #7b88ff;
+  --card-bg: rgba(25, 28, 35, 0.6);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --danger: #cf222e;
+  --input-bg: #161b22;
+  --border-radius: 12px;
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  background-image:
+    radial-gradient(circle at 15% 50%, rgba(94, 106, 210, 0.08), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(123, 136, 255, 0.06), transparent 25%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+/* Typography Scale */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  color: var(--text-muted);
+}
+
+/* Layout Utilities */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+/* Glassmorphism Cards */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+}
+
+.card:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* Inputs and Selects */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+}
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  background: var(--input-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text-main);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: var(--transition);
+  outline: none;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(94, 106, 210, 0.2);
+}
+
+.textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+  font-family: inherit;
+}
+
+.btn:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid var(--card-border);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.btn-danger {
+  background: transparent;
+  color: var(--danger);
+  border: 1px solid rgba(207, 34, 46, 0.3);
+}
+
+.btn-danger:hover {
+  background: rgba(207, 34, 46, 0.1);
+  border-color: var(--danger);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Builder Specific */
+.field-block {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--card-border);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  position: relative;
+  transition: var(--transition);
+}
+
+.field-block:hover {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-group {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+}
+
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Checkbox/Radios */
+.check-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+.check-input {
+  width: 1.25rem;
+  height: 1.25rem;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+/* Link Styles */
+a.link {
+  color: var(--accent);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a.link:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slideUpFade 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
